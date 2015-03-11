@@ -12,7 +12,7 @@ Feel free to access [my portfolio](https://github.com/msletten).
 >
 > This is our content.
 >
-> This is how you *bold*.
+> This is how you *ital*.
 
 This is even more **emphasis**.
 
