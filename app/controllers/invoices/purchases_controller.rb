@@ -45,8 +45,19 @@ class Invoices::PurchasesController < ApplicationController
   end
 
   def destroy
-    @purchase.destroy
-    respond_with(@purchase)
+#     @purchase.destroy
+#     respond_with(@purchase)
+    @invoice = Invoice.find(params[:invoice_id])
+    @purchase = Purchase.find(params[:id])
+    title = @purchase.name
+    
+    if @purchase.destroy
+      flash[:notice] = "#{title} was deleted successfully."
+      redirect_to @invoice
+    else
+      flash[:error] = "There was an error deleting the purchase."
+      render :show
+    end
   end
 
   private
